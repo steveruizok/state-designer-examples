@@ -1,0 +1,40 @@
+{
+  "name": "visualizer",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "1.5.3",
+    "@mdx-js/react": "1.5.3",
+    "@theme-ui/components": "0.2.50",
+    "@theme-ui/prism": "0.2.50",
+    "@types/mdx-js__react": "1.5.0",
+    "@types/node": "12.12.7",
+    "@types/prismjs": "1.16.0",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.4",
+    "@types/react-syntax-highlighter": "11.0.4",
+    "@types/theme-ui": "0.2.6",
+    "@types/theme-ui__components": "0.2.0",
+    "@zeit/next-css": "1.0.1",
+    "framer-motion": "1.7.0",
+    "lodash-es": "4.17.15",
+    "next": "9.1.3",
+    "prismjs": "1.19.0",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-prism": "4.3.2",
+    "react-simple-code-editor": "0.10.0",
+    "react-syntax-highlighter": "12.2.1",
+    "safe-eval": "0.4.1",
+    "state-designer": "1.0.12",
+    "theme-ui": "0.2.52",
+    "typescript": "3.7.2",
+    "use-clipboard-copy": "0.1.1"
+  },
+  "keywords": [],
+  "description": ""
+}
