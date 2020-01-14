@@ -4,21 +4,11 @@ import { Box } from '@theme-ui/components'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import theme from './theme'
+import pages from './pages'
 
 import './index.css'
 
 const Layout: React.FC<{}> = props => {
-  const pages = [
-    'Events',
-    'Events In Series',
-    'Counter',
-    'OnEnter',
-    'OnEvent',
-    'Transition OnEnter',
-    'Transition OnEvent',
-    'States',
-    'Nested States',
-  ]
   return (
     <ThemeProvider theme={theme}>
       <Header />

@@ -7,7 +7,7 @@ import { createStateDesigner, useStateDesigner } from 'state-designer'
 import Layout from '../../components/Layout'
 
 export interface Props {}
-const OnEnter: React.FC<Props> = ({ children }) => {
+const NestedStates: React.FC<Props> = ({ children }) => {
   const designer = createStateDesigner({
     initial: 'stop',
     states: {
@@ -20,7 +20,7 @@ const OnEnter: React.FC<Props> = ({ children }) => {
         on: {
           CLICKED_STOP: { to: 'stop' },
         },
-        initial: 'paused',
+        initial: 'playing',
         states: {
           paused: {
             on: {
@@ -29,7 +29,7 @@ const OnEnter: React.FC<Props> = ({ children }) => {
           },
           playing: {
             on: {
-              CLICKED_PLAY: { to: 'paused' },
+              CLICKED_PAUSE: { to: 'paused' },
             },
           },
         },
@@ -39,11 +39,9 @@ const OnEnter: React.FC<Props> = ({ children }) => {
 
   const [_, send, { getGraph }] = useStateDesigner(designer)
 
-  console.log(getGraph())
-
   return (
     <Layout>
-      <Visualizer title="Transitions" designer={designer}>
+      <Visualizer title="Nested States" designer={designer}>
         A machine may have different states and may transition between states as
         the result of an event. Events may belong to states. The machine will
         ignore events that belong to an inactive state. The events in the
@@ -61,27 +59,41 @@ const OnEnter: React.FC<Props> = ({ children }) => {
       >
         <Button onClick={() => send('CLICKED_STOP')}>Stop</Button>
         <Button onClick={() => send('CLICKED_PLAY')}>Play</Button>
+        <Button onClick={() => send('CLICKED_PAUSE')}>Pause</Button>
       </Card>
       <CodeBlock
         box
         code={`{
-  initial: 'stop',
-  states: {
-    stop: {
-      on: {
-        CLICKED_PLAY: { to: 'play' },
-      },
-    },
-    play: {
-      on: {
-        CLICKED_STOP: { to: 'stop' },
-      },
-    },
-  },
+	initial: 'stop',
+	states: {
+		stop: {
+			on: {
+				CLICKED_PLAY: { to: 'play' },
+			},
+		},
+		play: {
+			on: {
+				CLICKED_STOP: { to: 'stop' },
+			},
+			initial: 'playing',
+			states: {
+				paused: {
+					on: {
+						CLICKED_PLAY: { to: 'playing' },
+					},
+				},
+				playing: {
+					on: {
+						CLICKED_PAUSE: { to: 'paused' },
+					},
+				},
+			},
+		},
+	},
 }`}
       />
     </Layout>
   )
 }
 
-export default OnEnter
+export default NestedStates

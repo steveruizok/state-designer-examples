@@ -30,7 +30,7 @@
     "react-simple-code-editor": "0.10.0",
     "react-syntax-highlighter": "12.2.1",
     "safe-eval": "0.4.1",
-    "state-designer": "1.0.12",
+    "state-designer": "^1.0.13",
     "theme-ui": "0.2.52",
     "typescript": "3.7.2",
     "use-clipboard-copy": "0.1.1"

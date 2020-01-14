@@ -6410,10 +6410,10 @@ ssri@^6.0.1:
   dependencies:
     figgy-pudding "^3.5.1"
 
-state-designer@1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/state-designer/-/state-designer-1.0.12.tgz#4967ded95a9aeed280d86095a8095084947dba1f"
-  integrity sha512-AaTZiqdwKdU7zN7l3xyKjg9YuKxZ35DdDmsOpvivatsDwJohLDIvauaiU0iaYLUFZVuX/rvhbRcOc9qnDon8Ww==
+state-designer@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/state-designer/-/state-designer-1.0.13.tgz#1e5f1ef7c60dd1be2acbb0d0c94240e04d1e15d7"
+  integrity sha512-JpdZfXg5RmdPAMrmAjhW4CEXryUxFkXqh/O8HNd/CdNr773GwwFR9NLtSeqzNogKD8OqcfAynNmPobMfGd/kgg==
   dependencies:
     "@types/lodash-es" "^4.17.3"
     immer "^5.1.0"
