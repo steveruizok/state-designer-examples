@@ -15,14 +15,14 @@ const OnEvent: React.FC<Props> = ({ children }) => {
       count: 0,
     },
     onEvent: 'incrementClicks',
+    on: {
+      CLICKED_MINUS: 'decrementCount',
+      CLICKED_PLUS: 'incrementCount',
+    },
     actions: {
       incrementClicks: data => data.clicks++,
       incrementCount: data => data.count++,
       decrementCount: data => data.count--,
-    },
-    on: {
-      CLICKED_MINUS: 'decrementCount',
-      CLICKED_PLUS: 'incrementCount',
     },
   })
 
@@ -60,15 +60,15 @@ const OnEvent: React.FC<Props> = ({ children }) => {
     clicks: 0,
     count: 0,
   },
+  on: {
+    CLICKED_MINUS: 'decrementCount',
+    CLICKED_PLUS: 'incrementCount',
+  },
   onEvent: 'incrementClicks',
   actions: {
     incrementClicks: data => data.clicks++,
     incrementCount: data => data.count++,
     decrementCount: data => data.count--,
-  },
-  on: {
-    CLICKED_MINUS: 'decrementCount',
-    CLICKED_PLUS: 'incrementCount',
   },
 })`}
       />

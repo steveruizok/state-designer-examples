@@ -13,14 +13,6 @@ const OnEnter: React.FC<Props> = ({ children }) => {
       count: 0,
     },
     initial: 'inactive',
-    actions: {
-      increment: data => data.count++,
-      decrement: data => data.count--,
-    },
-    conditions: {
-      atMax: data => data.count === 10,
-      atMin: data => data.count === 0,
-    },
     states: {
       active: {
         onEnter: 'increment',
@@ -34,6 +26,14 @@ const OnEnter: React.FC<Props> = ({ children }) => {
           TOGGLE: { to: 'active' },
         },
       },
+    },
+    actions: {
+      increment: data => data.count++,
+      decrement: data => data.count--,
+    },
+    conditions: {
+      atMax: data => data.count === 10,
+      atMin: data => data.count === 0,
     },
   })
 
@@ -64,14 +64,6 @@ const OnEnter: React.FC<Props> = ({ children }) => {
     count: 0,
   },
   initial: 'inactive',
-  actions: {
-    increment: data => data.count++,
-    decrement: data => data.count--,
-  },
-  conditions: {
-    atMax: data => data.count === 10,
-    atMin: data => data.count === 0,
-  },
   states: {
     active: {
       onEnter: 'increment',
@@ -85,6 +77,14 @@ const OnEnter: React.FC<Props> = ({ children }) => {
         TOGGLE: { to: 'active' },
       },
     },
+  },
+  actions: {
+    increment: data => data.count++,
+    decrement: data => data.count--,
+  },
+  conditions: {
+    atMax: data => data.count === 10,
+    atMin: data => data.count === 0,
   },
 })`}
       />
