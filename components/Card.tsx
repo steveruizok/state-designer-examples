@@ -9,7 +9,7 @@ const Card: React.FC<Props> = ({ sx = {}, active = true, ...rest }) => {
   return (
     <Box
       opacity={active ? 1 : 0.9}
-      mb={2}
+      mb={[4, 2]}
       backgroundColor={active ? 'active' : 'inactive'}
       sx={{
         position: 'relative',

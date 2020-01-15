@@ -25,6 +25,7 @@ const CodeBlock: React.FC<Props> = ({ code = '', box, ...rest }) => {
           borderColor: 'grey30',
           backgroundColor: 'none',
           margin: '.5em 0',
+          fontSize: [2, 1],
         }),
       }}
     >
