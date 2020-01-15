@@ -1,13 +1,13 @@
-import * as React from 'react';
-import * as safeEval from 'safe-eval';
-import { Box, Button, Input } from '@theme-ui/components';
-import { useStateDesigner } from 'state-designer';
+import * as React from 'react'
+import * as safeEval from 'safe-eval'
+import { Box, Button, Input } from '@theme-ui/components'
+import { useStateDesigner } from 'state-designer'
 
 export interface Props {
-  active: boolean;
-  value: string;
-  enabled: (name: string, payload?: any) => boolean;
-  onClick: (name: string, payload?: any) => void;
+  active: boolean
+  value: string
+  enabled: (name: string, payload?: any) => boolean
+  onClick: (name: string, payload?: any) => void
 }
 
 const EventButton: React.FC<Props> = ({ active, value, enabled, onClick }) => {
@@ -28,7 +28,7 @@ const EventButton: React.FC<Props> = ({ active, value, enabled, onClick }) => {
                 {
                   if: 'codeIsValid',
                   do: data => {
-                    onClick(value, data.payload ? data.payloadData : undefined);
+                    onClick(value, data.payload ? data.payloadData : undefined)
                   },
                 },
               ],
@@ -68,31 +68,31 @@ const EventButton: React.FC<Props> = ({ active, value, enabled, onClick }) => {
     },
     actions: {
       updatePayload: (data, code) => {
-        data.payload = code;
+        data.payload = code
       },
       updateError: data => {
-        let error = '';
+        let error = ''
 
         try {
-          safeEval(data.payload);
+          safeEval(data.payload)
         } catch (e) {
-          error = e.message;
+          error = e.message
         }
 
-        data.error = error;
+        data.error = error
       },
       updateData: data => {
         if (data.error === '') {
-          data.payloadData = safeEval(data.payload);
+          data.payloadData = safeEval(data.payload)
         }
       },
     },
     conditions: {
       codeIsValid: data => {
-        return data.error === '';
+        return data.error === ''
       },
     },
-  });
+  })
 
   return (
     <Box
@@ -111,7 +111,7 @@ const EventButton: React.FC<Props> = ({ active, value, enabled, onClick }) => {
       >
         {value}
       </Button>
-      {isIn('editing.open') && (
+      {/* {isIn('editing.open') && (
         <Box sx={{ position: 'relative' }}>
           <Input
             px={2}
@@ -133,9 +133,9 @@ const EventButton: React.FC<Props> = ({ active, value, enabled, onClick }) => {
         onClick={() => send('TOGGLE_PAYLOAD')}
       >
         {isIn('editing.open') ? '' : data.payload}
-      </Button>
+      </Button> */}
     </Box>
-  );
-};
+  )
+}
 
-export default EventButton;
+export default EventButton

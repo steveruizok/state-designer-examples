@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Styled } from 'theme-ui'
+import Node from './Graph/Node'
 import Card from './Card'
 import CodeBlock from './CodeBlock'
-import EventButton from './EventButton'
 import {
   useStateDesigner,
   StateDesigner,
@@ -29,7 +29,14 @@ const Graph: React.FC<Props> = ({ designer, children }) => {
   return (
     <Card active={true}>
       {(data as any) && (
-        <Box sx={{ borderBottom: '1px solid #ccc' }}>
+        <Box
+          sx={{
+            borderStyle: 'solid',
+            borderWidth: 0,
+            borderBottomWidth: 1,
+            borderBottomColor: 'grey30',
+          }}
+        >
           <CodeBlock code={json} />
         </Box>
       )}
@@ -48,134 +55,6 @@ const Graph: React.FC<Props> = ({ designer, children }) => {
       </Box>
       {children}
     </Card>
-  )
-}
-
-const Node: React.FC<
-  GraphNode & {
-    canEvent: (name: string, payload: any) => boolean
-    onEvent: (name: string, payload: any) => void
-    root?: boolean
-  }
-> = ({
-  name,
-  initial,
-  active,
-  events,
-  states,
-  canEvent,
-  autoEvents,
-  onEvent,
-  root = false,
-}) => {
-  const hasEvents = events.length > 0
-  const hasContent = states || hasEvents || autoEvents.length > 0
-
-  return (
-    <Box>
-      {name !== 'root' && (
-        <Flex
-          px={3}
-          py={2}
-          backgroundColor="muted"
-          sx={{
-            alignItems: 'center',
-            borderBottom: hasContent
-              ? active
-                ? '1px solid #ccc'
-                : '1px solid #ddd'
-              : 'none',
-          }}
-        >
-          <Radio checked={active} onChange={() => {}} disabled={true} />
-          <Text
-            variant="event"
-            sx={{
-              fontWeight: active ? '600' : '400',
-            }}
-          >
-            {name}
-            {initial && '*'}
-          </Text>
-        </Flex>
-      )}
-      {hasContent && (
-        <Box px={4} py={3}>
-          {autoEvents.length > 0 && (
-            <ListContainer name="Auto Events">
-              <Styled.ul>
-                {autoEvents.map((value, index) => {
-                  return (
-                    <Styled.li key={index}>
-                      <Text variant="autoEvent">{value}</Text>
-                    </Styled.li>
-                  )
-                })}
-              </Styled.ul>
-            </ListContainer>
-          )}
-          {hasEvents && (
-            <ListContainer name="Events">
-              <Styled.ul>
-                {events.map((value, index) => {
-                  return (
-                    <Styled.li key={index}>
-                      <EventButton
-                        active={active}
-                        value={value}
-                        enabled={canEvent}
-                        onClick={onEvent}
-                      />
-                    </Styled.li>
-                  )
-                })}
-              </Styled.ul>
-            </ListContainer>
-          )}
-          {states && (
-            <ListContainer name="States">
-              <Flex
-                pt={1}
-                sx={{
-                  flexDirection: states.length > 1 ? 'column' : 'row',
-                  alignItems: 'flex-start',
-                  justifyContent: 'flex-start',
-                }}
-              >
-                {states.map((value, index) => {
-                  const childHasContent =
-                    value.states ||
-                    value.events.length > 0 ||
-                    value.autoEvents.length > 0
-
-                  return (
-                    <Card
-                      key={index}
-                      active={value.active}
-                      mr={childHasContent ? 5 : 2}
-                      sx={{
-                        width: '100%', //root ? "100%" : hasContent ? "fit-content" : "100%"
-                      }}
-                    >
-                      <Node {...value} canEvent={canEvent} onEvent={onEvent} />
-                    </Card>
-                  )
-                })}
-              </Flex>
-            </ListContainer>
-          )}
-        </Box>
-      )}
-    </Box>
-  )
-}
-
-const ListContainer: React.FC<{ name: string }> = ({ name, children }) => {
-  return (
-    <Box>
-      <Text variant="label">{name}</Text>
-      {children}
-    </Box>
   )
 }
 

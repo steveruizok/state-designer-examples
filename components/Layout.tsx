@@ -12,19 +12,14 @@ const Layout: React.FC<{}> = props => {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <Box
-        pb={6}
-        sx={{
-          backgroundColor: '#fafafa',
-        }}
-      >
+      <Box pb={6}>
         <Box
           sx={{
             maxWidth: 500,
             margin: '0 auto',
             display: 'grid',
             gap: 32,
-            gridTemplateColumns: ['auto', 'auto', '500px 100px'],
+            gridTemplateColumns: ['auto', 'auto', '500px 128px'],
           }}
         >
           <Box p={3}>{props.children}</Box>

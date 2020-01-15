@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Box, Button, BoxProps } from '@theme-ui/components'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { useClipboard } from 'use-clipboard-copy'
-import codeTheme from './codetheme'
+import { dark, light } from './codetheme'
 
 // import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
@@ -18,16 +18,17 @@ const CodeBlock: React.FC<Props> = ({ code = '', box, ...rest }) => {
     <Box
       sx={{
         position: 'relative',
-        backgroundColor: '#f7f8fa',
         ...(box && {
           position: 'relative',
-          border: '1px solid #dddddd',
-          backgroundColor: 'white',
+          borderWidth: 1,
+          borderStyle: 'solid',
+          borderColor: 'grey30',
+          backgroundColor: 'none',
           margin: '.5em 0',
         }),
       }}
     >
-      <SyntaxHighlighter language="javascript" style={codeTheme}>
+      <SyntaxHighlighter language="javascript" style={dark}>
         {code}
       </SyntaxHighlighter>
       <Button

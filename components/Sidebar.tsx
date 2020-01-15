@@ -20,7 +20,9 @@ const Sidebar: React.FC<{ pages: string[] }> = ({ pages }) => {
                 <L
                   sx={{
                     cursor: 'pointer',
-                    ...(isActive && { color: '#000' }),
+                    fontFamily: 'navigation',
+                    fontSize: 2,
+                    ...(isActive && { color: 'faded' }),
                   }}
                 >
                   {page}

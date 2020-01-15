@@ -66,7 +66,7 @@ const Counter: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   data: {
     min: 0,
     max: 10,
@@ -84,7 +84,7 @@ const Counter: React.FC<Props> = ({ children }) => {
     CLICKED_MINUS: { do: 'decrementCount', unless: 'isAtMin' },
     CLICKED_PLUS: { do: 'incrementCount', unless: 'isAtMax' },
   },
-}`}
+})`}
       />
     </Box>
   )
