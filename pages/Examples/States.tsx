@@ -49,7 +49,7 @@ const OnEnter: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   initial: 'stop',
   states: {
     stop: {
@@ -63,7 +63,7 @@ const OnEnter: React.FC<Props> = ({ children }) => {
       },
     },
   },
-}`}
+})`}
       />
     </Layout>
   )

@@ -38,7 +38,7 @@ const Events: React.FC<Props> = ({ children }) => {
       </Visualizer>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   on: {
     SAY_HELLO: () => console.log('Hello World A'),
     SAY_GOOD_MORNING: {
@@ -50,7 +50,7 @@ const Events: React.FC<Props> = ({ children }) => {
       do: () => console.log('Good afternoon world'),
     },
   },
-}`}
+})`}
       />
     </Layout>
   )

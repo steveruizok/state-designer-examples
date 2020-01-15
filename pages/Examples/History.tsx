@@ -72,21 +72,34 @@ const History: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
-  initial: 'stop',
+        code={`createStateDesigner({
+  initial: 'turnedOff',
   states: {
-    stop: {
+    turnedOff: {
       on: {
-        CLICKED_PLAY: { to: 'play' },
+        PRESS_POWER: { to: 'turnedOn.restore' },
       },
     },
-    play: {
+    turnedOn: {
       on: {
-        CLICKED_STOP: { to: 'stop' },
+        PRESS_POWER: { to: 'turnedOff' },
+      },
+      initial: 'volumeOn',
+      states: {
+        volumeOff: {
+          on: {
+            PRESS_MUTE: { to: 'volumeOn' },
+          },
+        },
+        volumeOn: {
+          on: {
+            PRESS_MUTE: { to: 'volumeOff' },
+          },
+        },
       },
     },
   },
-}`}
+})`}
       />
     </Layout>
   )

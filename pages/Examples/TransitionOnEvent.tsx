@@ -66,7 +66,7 @@ const TransitionOnEvent: React.FC<Props> = () => {
       </Card>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   data: {
     count: 0,
   },
@@ -90,7 +90,7 @@ const TransitionOnEvent: React.FC<Props> = () => {
   actions: {
     incrementCount: data => data.count++,
   },
-}`}
+})`}
       />
     </Layout>
   )

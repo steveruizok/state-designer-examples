@@ -55,22 +55,22 @@ const OnEvent: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
-data: {
-  clicks: 0,
-  count: 0,
-},
-onEvent: 'incrementClicks',
-actions: {
-  incrementClicks: data => data.clicks++,
-  incrementCount: data => data.count++,
-  decrementCount: data => data.count--,
-},
-on: {
-  CLICKED_MINUS: 'decrementCount',
-  CLICKED_PLUS: 'incrementCount',
-},
-}`}
+        code={`createStateDesigner({
+  data: {
+    clicks: 0,
+    count: 0,
+  },
+  onEvent: 'incrementClicks',
+  actions: {
+    incrementClicks: data => data.clicks++,
+    incrementCount: data => data.count++,
+    decrementCount: data => data.count--,
+  },
+  on: {
+    CLICKED_MINUS: 'decrementCount',
+    CLICKED_PLUS: 'incrementCount',
+  },
+})`}
       />
     </Layout>
   )

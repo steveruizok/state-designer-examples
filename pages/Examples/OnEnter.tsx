@@ -59,25 +59,34 @@ const OnEnter: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   data: {
-    min: 0,
-    max: 10,
     count: 0,
   },
+  initial: 'inactive',
   actions: {
-    incrementCount: data => data.count++,
-    decrementCount: data => data.count--,
+    increment: data => data.count++,
+    decrement: data => data.count--,
   },
   conditions: {
-    isAtMin: data => data.count === data.min,
-    isAtMax: data => data.count === data.max,
+    atMax: data => data.count === 10,
+    atMin: data => data.count === 0,
   },
-  on: {
-    CLICKED_MINUS: { do: 'decrementCount', unless: 'isAtMin' },
-    CLICKED_PLUS: { do: 'incrementCount', unless: 'isAtMax' },
+  states: {
+    active: {
+      onEnter: 'increment',
+      on: {
+        TOGGLE: { to: 'inactive' },
+      },
+    },
+    inactive: {
+      onEnter: 'decrement',
+      on: {
+        TOGGLE: { to: 'active' },
+      },
+    },
   },
-}`}
+})`}
       />
     </Layout>
   )

@@ -35,7 +35,7 @@ const EventsInSeries: React.FC<Props> = ({ children }) => {
       </Visualizer>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   on: {
     CLICKED_BUTTON_A: [
       () => console.log('Good morning!'),
@@ -52,7 +52,7 @@ const EventsInSeries: React.FC<Props> = ({ children }) => {
       },
     ],
   },
-}`}
+})`}
       />
     </Layout>
   )

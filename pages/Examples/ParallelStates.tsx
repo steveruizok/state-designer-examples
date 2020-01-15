@@ -77,40 +77,40 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
-	states: {
-		bold: {
-			initial: 'off',
-			states: {
-				on: {
-					on: {
-						TOGGLE_BOLD: { to: 'off' },
-					},
-				},
-				off: {
-					on: {
-						TOGGLE_BOLD: { to: 'on' },
-					},
-				},
-			},
-		},
-		italic: {
-			initial: 'off',
-			states: {
-				on: {
-					on: {
-						TOGGLE_ITALIC: { to: 'off' },
-					},
-				},
-				off: {
-					on: {
-						TOGGLE_ITALIC: { to: 'on' },
-					},
-				},
-			},
-		},
-	},
-}`}
+        code={`createStateDesigner({
+  states: {
+    bold: {
+      initial: 'off',
+      states: {
+        on: {
+          on: {
+            TOGGLE_BOLD: { to: 'off' },
+          },
+        },
+        off: {
+          on: {
+            TOGGLE_BOLD: { to: 'on' },
+          },
+        },
+      },
+    },
+    italic: {
+      initial: 'off',
+      states: {
+        on: {
+          on: {
+            TOGGLE_ITALIC: { to: 'off' },
+          },
+        },
+        off: {
+          on: {
+            TOGGLE_ITALIC: { to: 'on' },
+          },
+        },
+      },
+    },
+  },
+})`}
       />
     </Layout>
   )

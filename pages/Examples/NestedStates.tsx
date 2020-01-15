@@ -63,34 +63,34 @@ const NestedStates: React.FC<Props> = ({ children }) => {
       </Card>
       <CodeBlock
         box
-        code={`{
-	initial: 'stop',
-	states: {
-		stop: {
-			on: {
-				CLICKED_PLAY: { to: 'play' },
-			},
-		},
-		play: {
-			on: {
-				CLICKED_STOP: { to: 'stop' },
-			},
-			initial: 'playing',
-			states: {
-				paused: {
-					on: {
-						CLICKED_PLAY: { to: 'playing' },
-					},
-				},
-				playing: {
-					on: {
-						CLICKED_PAUSE: { to: 'paused' },
-					},
-				},
-			},
-		},
-	},
-}`}
+        code={`createStateDesigner({
+  initial: 'stop',
+  states: {
+    stop: {
+      on: {
+        CLICKED_PLAY: { to: 'play' },
+      },
+    },
+    play: {
+      on: {
+        CLICKED_STOP: { to: 'stop' },
+      },
+      initial: 'playing',
+      states: {
+        paused: {
+          on: {
+            CLICKED_PLAY: { to: 'playing' },
+          },
+        },
+        playing: {
+          on: {
+            CLICKED_PAUSE: { to: 'paused' },
+          },
+        },
+      },
+    },
+  },
+})`}
       />
     </Layout>
   )

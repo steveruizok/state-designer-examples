@@ -30,22 +30,23 @@ const TransitionLoop: React.FC<Props> = () => {
       <Visualizer title="onEnter Transitions" designer={designer} />
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   data: {
-    clicks: 0,
     count: 0,
   },
-  onEvent: 'incrementClicks',
-  actions: {
-    incrementClicks: data => data.clicks++,
-    incrementCount: data => data.count++,
-    decrementCount: data => data.count--,
-  },
+  initial: 'inactive',
   on: {
-    CLICKED_MINUS: 'decrementCount',
-    CLICKED_PLUS: 'incrementCount',
+    TOGGLE: { to: 'inactive' },
   },
-}`}
+  states: {
+    active: {
+      onEnter: { to: 'inactive' },
+    },
+    inactive: {
+      onEnter: { to: 'active' },
+    },
+  },
+})`}
       />
     </Layout>
   )

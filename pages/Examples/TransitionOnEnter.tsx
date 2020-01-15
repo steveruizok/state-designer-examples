@@ -79,7 +79,7 @@ const TransitionOnEnter: React.FC<Props> = () => {
       </Card>
       <CodeBlock
         box
-        code={`{
+        code={`createStateDesigner({
   data: {
     count: 0,
   },
@@ -119,7 +119,7 @@ const TransitionOnEnter: React.FC<Props> = () => {
     incrementCountBy: (data, payload, safePayload) =>
       (data.count += safePayload),
   },
-}`}
+})`}
       />
     </Layout>
   )
