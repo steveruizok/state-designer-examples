@@ -126,6 +126,9 @@ export const base = {
       pl: 0,
       my: 1,
       listStyleType: 'none',
+      // "& ul:nth-of-type(n)": {
+      //   borderLeft: "1px solid #aaa"
+      // }
     },
     li: {
       ml: 0,
@@ -139,13 +142,13 @@ export const base = {
   },
   buttons: {
     primary: {
-      fontSize: [3, 1],
       fontFamily: 'body',
       fontWeight: '600',
       letterSpacing: 0.5,
       py: 2,
-      px: 2,
+      px: 4,
       mr: 2,
+      fontSize: 2,
       outline: 'none',
       borderStyle: 'solid',
       borderWidth: 1,
@@ -171,7 +174,6 @@ export const base = {
       transition: 'all .16s',
     },
     secondary: {
-      fontSize: [3, 1],
       fontWeight: 'bold',
       bg: 'muted',
       borderWidth: 1,
@@ -187,7 +189,6 @@ export const base = {
       },
     },
     flat: {
-      fontSize: [2, 1],
       background: 'none',
       color: 'primary',
       borderWidth: 1,
@@ -195,8 +196,8 @@ export const base = {
       borderColor: 'primary',
     },
     link: {
-      fontSize: [2, 0],
       cursor: 'pointer',
+      fontSize: 0,
       color: 'primary',
       background: 'none',
       p: 2,
@@ -204,10 +205,10 @@ export const base = {
     event: {
       fontFamily: 'body',
       fontWeight: '600',
-      fontSize: [3, 1],
       letterSpacing: 0.5,
       py: 2,
       px: 2,
+      fontSize: 1,
       outline: 'none',
       borderStyle: 'solid',
       borderWidth: 1,
@@ -242,7 +243,7 @@ export const base = {
     caption: {
       fontFamily: 'monospace',
       textTransform: 'uppercase',
-      fontSize: [2, 0],
+      fontSize: 0,
       mt: 1,
       color: 'low',
       fontWeight: 'bold',
@@ -265,25 +266,25 @@ export const base = {
     body: {
       color: 'text',
       fontWeight: 500,
-      fontSize: [3, 1],
+      fontSize: 1,
       lineHeight: 1.5,
     },
     event: {
       color: 'bright',
-      fontSize: [3, 1],
+      fontSize: 1,
       letterSpacing: 0.5,
     },
     autoEvent: {
       letterSpacing: 1.5,
-      fontSize: [3, 1],
+      fontSize: 1,
       fontWeight: 'bold',
       display: 'inline',
     },
     label: {
       fontFamily: 'monospace',
       letterSpacing: 1.1,
-      fontSize: [2, 1],
-      py: [3, 2],
+      fontSize: 0,
+      py: 2,
       fontWeight: 'bold',
       textTransform: 'uppercase',
       color: 'faded',
@@ -292,7 +293,7 @@ export const base = {
   inputs: {
     event: {
       fontFamily: 'monospace',
-      fontSize: [3, 1],
+      fontSize: 1,
       lineHeight: 1,
       borderLeft: 'none',
       borderRight: 'none',
