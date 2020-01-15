@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Styled } from 'theme-ui'
-import { Box, Link as L } from '@theme-ui/components'
+import { Box, Link } from '@theme-ui/components'
 
 const Sidebar: React.FC<{ pages: string[] }> = ({ pages }) => {
   const router = useRouter()
@@ -15,20 +15,18 @@ const Sidebar: React.FC<{ pages: string[] }> = ({ pages }) => {
           const isActive = router.pathname === href
 
           return (
-            <Styled.li key={i}>
-              <Link href={`/Examples/${page.replace(/\s/g, '')}`}>
-                <L
-                  sx={{
-                    cursor: 'pointer',
-                    fontFamily: 'navigation',
-                    fontSize: 2,
-                    ...(isActive && { color: 'faded' }),
-                  }}
-                >
-                  {page}
-                </L>
+            <NextLink href={`/Examples/${page.replace(/\s/g, '')}`}>
+              <Link
+                sx={{
+                  cursor: 'pointer',
+                  fontFamily: 'navigation',
+                  fontSize: 2,
+                  ...(isActive && { color: 'faded' }),
+                }}
+              >
+                <Styled.li key={i}>{page}</Styled.li>
               </Link>
-            </Styled.li>
+            </NextLink>
           )
         })}
       </Styled.ul>

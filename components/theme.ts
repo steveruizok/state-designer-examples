@@ -33,6 +33,7 @@ export const base = {
     bright: 'rgba(240, 240, 255, .25)',
     active: 'rgba(222, 222, 255, .075)',
     inactive: 'rgba(140, 140, 155, .01)',
+    shadow: 'rgba(40, 40, 60, .3)',
     highlight: '#ffd84c',
     background: '#fff',
     dark: '#3b6ed4',

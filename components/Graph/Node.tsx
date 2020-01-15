@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Styled } from 'theme-ui'
-import { Flex, Radio, Box, Text } from '@theme-ui/components'
+import PushButton from './PushButton'
+import { Flex, Box, Text } from '@theme-ui/components'
 import { Graph } from 'state-designer'
 import Card from '../Card'
 import EventButton from '../EventButton'
@@ -41,7 +42,8 @@ const Node: React.FC<Props> = ({
             borderBottomColor: active ? 'grey30' : 'grey10',
           }}
         >
-          <Box
+          <PushButton active={active} />
+          {/* <Box
             sx={{
               width: 12,
               height: 12,
@@ -53,7 +55,7 @@ const Node: React.FC<Props> = ({
               boxShadow: '0px 0px 8px 1px rgba(40, 173, 250, .2)',
               mr: 2,
             }}
-          />
+          /> */}
           <Text
             variant="event"
             sx={{
