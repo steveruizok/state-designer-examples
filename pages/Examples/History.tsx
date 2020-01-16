@@ -48,9 +48,10 @@ const History: React.FC<Props> = ({ children }) => {
           own, then they'll active their initial states, too.{' '}
         </p>
         <p>
-          Once in a state, a user may trigger transitions within its it. If the
-          user then transitions out of the state, then when the user re-enters
-          the state, you may want to restore their previous changes.
+          Once in a state, a user might fire events that trigger transitions
+          between its child states. If the user transitions out of the state,
+          then when the user re-enters the state, you may want to restore their
+          previous changes. The <b>.restore</b> transition makes this possible.
         </p>
         <p>
           In this example, a user can turn on a device, turn off its volume, and

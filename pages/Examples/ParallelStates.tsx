@@ -13,14 +13,14 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
       bold: {
         initial: 'off',
         states: {
-          on: {
+          active: {
             on: {
-              TOGGLE_BOLD: { to: 'off' },
+              TOGGLE_BOLD: { to: 'inactive' },
             },
           },
-          off: {
+          inactive: {
             on: {
-              TOGGLE_BOLD: { to: 'on' },
+              TOGGLE_BOLD: { to: 'active' },
             },
           },
         },
@@ -28,14 +28,14 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
       italic: {
         initial: 'off',
         states: {
-          on: {
+          active: {
             on: {
-              TOGGLE_ITALIC: { to: 'off' },
+              TOGGLE_ITALIC: { to: 'inactive' },
             },
           },
-          off: {
+          inactive: {
             on: {
-              TOGGLE_ITALIC: { to: 'on' },
+              TOGGLE_ITALIC: { to: 'active' },
             },
           },
         },
@@ -51,6 +51,14 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
         <p>
           A state may have parallel states. If a state does not have an{' '}
           <b>initial</b> state, then all of its states will be active at once.
+          While a state may be parallel, its child states can be "branch"
+          states.
+        </p>
+        <p>
+          In the example below, the machine is a parallel state with two
+          children, bold and italic, each of which are branch states with two
+          children of their own: active and inactive. A user can toggle bold and
+          italic separately.
         </p>
       </Visualizer>
       <Card
@@ -82,14 +90,14 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
     bold: {
       initial: 'off',
       states: {
-        on: {
+        active: {
           on: {
-            TOGGLE_BOLD: { to: 'off' },
+            TOGGLE_BOLD: { to: 'inactive' },
           },
         },
-        off: {
+        inactive: {
           on: {
-            TOGGLE_BOLD: { to: 'on' },
+            TOGGLE_BOLD: { to: 'active' },
           },
         },
       },
@@ -97,14 +105,14 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
     italic: {
       initial: 'off',
       states: {
-        on: {
+        active: {
           on: {
-            TOGGLE_ITALIC: { to: 'off' },
+            TOGGLE_ITALIC: { to: 'inactive' },
           },
         },
-        off: {
+        inactive: {
           on: {
-            TOGGLE_ITALIC: { to: 'on' },
+            TOGGLE_ITALIC: { to: 'active' },
           },
         },
       },
