@@ -213,13 +213,13 @@ export const dark = {
     padding: '1em',
     margin: '0 0',
     overflow: 'auto',
-    borderRadius: '0.3em',
+    borderRadius: '0',
     background: '#1e1e1e',
   },
   ':not(pre) > code[class*="language-"]': {
     background: '#1e1e1e',
     padding: '.1em',
-    borderRadius: '.3em',
+    borderRadius: '0',
   },
   comment: {
     color: '#6a9955',

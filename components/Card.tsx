@@ -14,12 +14,18 @@ const Card: React.FC<Props> = ({ sx = {}, active = true, ...rest }) => {
       sx={{
         position: 'relative',
         transition: 'all .08s',
-        boxShadow: active
-          ? '0px 3px 8px 1px rgba(0,0,0,.3)'
-          : '0px 2px 3px 1px rgba(0,0,0,.3)',
+        borderStyle: 'outset',
         borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: active ? 'bright' : 'low',
+        borderColor: active
+          ? 'rgba(132, 132, 132, .82)'
+          : 'rgba(122, 122, 122, .65)',
+        boxShadow: active
+          ? `
+          0px 0px 8px 1px rgba(0, 0, 0, .18),
+          1px 1px 1px 0px rgba(0, 0, 0, .12)`
+          : `
+          0px 0px 6px 1px rgba(0, 0, 0, .16),
+          1px 1px 1px 0px rgba(0, 0, 0, .06)`,
         borderRadius: 4,
         overflow: 'hidden',
         '&:last-child': {

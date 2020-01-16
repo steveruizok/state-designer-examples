@@ -1,6 +1,6 @@
 import React from 'react'
 import Visualizer from '../../components/Visualizer'
-import Card from '../../components/Card'
+import Container from '../../components/Container'
 import CodeBlock from '../../components/CodeBlock'
 import { Button } from '@theme-ui/components'
 import { createStateDesigner, useStateDesigner } from 'state-designer'
@@ -47,7 +47,7 @@ const NestedStates: React.FC<Props> = ({ children }) => {
         ignore events that belong to an inactive state. The events in the
         machine's active states make up the machine's "available" events.
       </Visualizer>
-      <Card
+      <Container
         my={3}
         p={4}
         sx={{
@@ -60,7 +60,7 @@ const NestedStates: React.FC<Props> = ({ children }) => {
         <Button onClick={() => send('CLICKED_STOP')}>Stop</Button>
         <Button onClick={() => send('CLICKED_PLAY')}>Play</Button>
         <Button onClick={() => send('CLICKED_PAUSE')}>Pause</Button>
-      </Card>
+      </Container>
       <CodeBlock
         box
         code={`createStateDesigner({

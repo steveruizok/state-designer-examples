@@ -25,12 +25,13 @@ export const base = {
   },
   colors: {
     text: '#fff',
-    neon: '#029aff',
+    brightNeon: 'rgba(237, 262, 255, 1.000)',
+    neon: 'rgba(2, 178, 255, 1.000)',
     focus: '#498dff',
     faded: 'rgba(240, 240, 255, .41)',
     muted: 'rgba(240, 240, 255, .03)',
     low: 'rgba(240, 240, 255, .12)',
-    bright: 'rgba(240, 240, 255, .25)',
+    bright: 'rgba(240, 240, 255, .5)',
     active: 'rgba(222, 222, 255, .075)',
     inactive: 'rgba(140, 140, 155, .01)',
     shadow: 'rgba(40, 40, 60, .3)',
@@ -154,7 +155,13 @@ export const base = {
       borderStyle: 'solid',
       borderWidth: 1,
       borderColor: 'primary',
-      boxShadow: '0px 3px 8px 0px rgba(0,0,0,.2)',
+      boxShadow: `
+      -1px -1px 8px 0px rgba(62, 127, 255, .16),
+      -1px -1px 3px 0px rgba(62, 127, 255, .12),
+      -1px -1px 1px 0px rgba(62, 127, 255, .1),
+      1px 1px 6px 1px rgba(0, 0, 0, .22),
+      1px 1px 3px 0px rgba(0, 0, 0, .09),
+      1px 1px 1px 0px rgba(0, 0, 0, .1)`,
       textShadow: '-1px -1px 1px rgba(0,0,0,.2),1px -1px 1px rgba(0,0,0,.2)',
       '&:focus': {
         bg: 'primary',
@@ -211,12 +218,13 @@ export const base = {
       px: 2,
       fontSize: 1,
       outline: 'none',
-      borderStyle: 'solid',
+      borderStyle: 'outset',
       borderWidth: 1,
-      borderColor: 'primary',
-      boxShadow: '0px 3px 8px 0px rgba(0,0,0,.2)',
+      borderColor: 'rgba(2, 154, 255, .82)',
       textShadow: '-1px -1px 1px rgba(0,0,0,.2),1px -1px 1px rgba(0,0,0,.2)',
-      // borderRadius: '4px 0 0 4px',
+      boxShadow: `
+      0px 0px 8px 1px rgba(0, 0, 0, .18),
+      1px 1px 1px 0px rgba(0, 0, 0, .12)`,
       '&:focus': {
         bg: 'primary',
         borderColor: 'focus',
@@ -227,13 +235,14 @@ export const base = {
       },
       '&:active': {
         bg: 'primary',
-        boxShadow: '0px 1px 2px 0px rgba(0,0,0,.2)',
+        boxShadow: `
+        0px 0px 6px 1px rgba(0, 0, 0, .16),
+        1px 1px 1px 0px rgba(0, 0, 0, .06)`,
       },
       '&:disabled': {
-        opacity: 0.5,
-        boxShadow: '0px 2px 3px 1px rgba(0,0,0,.3)',
+        opacity: 0.6,
       },
-      transition: 'all .16s',
+      transition: 'all .12s',
     },
   },
   text: {
@@ -271,7 +280,7 @@ export const base = {
       lineHeight: 1.5,
     },
     event: {
-      color: 'bright',
+      color: 'brightNeon',
       fontSize: 1,
       letterSpacing: 0.5,
     },

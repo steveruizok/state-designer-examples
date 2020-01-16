@@ -18,11 +18,24 @@ const PushButton: React.FC<Props> = ({
         borderRadius: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        boxShadow: `0px 0px 2px 1px rgba(0, 0, 0, .3) 
-          ${active ? ', 0px 0px 8px 1px rgba(40, 173, 250, .25)' : ''}`,
+        boxShadow: active
+          ? `
+          -1px -1px 8px 0px rgba(255, 255, 255, .24),
+          0px 0px 1px 1px rgba(255, 255, 255, .24),
+          -1px -1px 2px 0px rgba(255, 255, 255, .16),
+          1px 1px 6px 1px rgba(0, 0, 0, .24),
+          1px 1px 3px 0px rgba(0, 0, 0, .8),
+          1px 1px 1px 0px rgba(0, 0, 0, .16)`
+          : `
+          -1px -1px 8px 0px rgba(255, 255, 255, .1),
+          0px 0px 1px 1px rgba(255, 255, 255, .1),
+          -1px -1px 2px 0px rgba(255, 255, 255, .12),
+          1px 1px 6px 1px rgba(0, 0, 0, .16),
+          1px 1px 3px 0px rgba(0, 0, 0, .4),
+          1px 1px 1px 0px rgba(0, 0, 0, .05)`,
         padding: '3px',
-        overflow: 'hidden',
-        transition: 'all .26s',
+        overflow: 'idden',
+        transition: 'all .24s',
       }}
     >
       <Box
@@ -32,7 +45,17 @@ const PushButton: React.FC<Props> = ({
           borderRadius: '100%',
           borderWidth: 3,
           borderStyle: 'solid',
-          borderColor: active ? 'neon' : 'shadow',
+          borderColor: active ? 'neon' : 'rgba(0,36,65,.14)',
+          boxShadow: active
+            ? `
+          1px 1px 8px 2px rgba(62, 127, 255, .5),
+          0px 0px 6px 1px rgba(0, 0, 0, .08),
+          0px 0px 3px 0px rgba(0, 0, 0, .3),
+          0px 0px 1px 0px rgba(0, 0, 0, .05),
+          0px 0px 3px 1px rgba(62, 127, 255, .32),
+          0px 0px 3px 1px rgba(255, 255, 255, .22),
+          0px 0px 1px 1px rgba(62, 127, 255, .3)`
+            : ``,
         }}
       />
     </Flex>

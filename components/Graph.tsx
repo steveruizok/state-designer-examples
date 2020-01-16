@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Styled } from 'theme-ui'
 import Node from './Graph/Node'
-import Card from './Card'
+import Container from './Container'
 import CodeBlock from './CodeBlock'
 import {
   useStateDesigner,
@@ -27,17 +27,29 @@ const Graph: React.FC<Props> = ({ designer, children }) => {
   }
 
   return (
-    <Card active={true}>
+    <Container>
       {(data as any) && (
         <Box
           sx={{
             borderStyle: 'solid',
             borderWidth: 0,
             borderBottomWidth: 1,
-            borderBottomColor: 'grey30',
+            borderBottomColor: 'shadow',
+            boxShadow: '0px 1px 0px 0px rgba(125, 125, 125, .5)',
           }}
+          p={3}
         >
-          <CodeBlock code={json} />
+          <Box
+            sx={{
+              borderRadius: 2,
+              overflow: 'hidden',
+              borderWidth: 1,
+              borderColor: 'muted',
+              borderStyle: 'inset',
+            }}
+          >
+            <CodeBlock code={json} />
+          </Box>
         </Box>
       )}
       <Box sx={{ position: 'relative' }}>
@@ -54,7 +66,7 @@ const Graph: React.FC<Props> = ({ designer, children }) => {
         <Node {...getGraph()} root onEvent={onEvent} canEvent={canEvent} />
       </Box>
       {children}
-    </Card>
+    </Container>
   )
 }
 

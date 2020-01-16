@@ -39,28 +39,24 @@ const Node: React.FC<Props> = ({
             borderStyle: 'solid',
             borderWidth: 0,
             borderBottomWidth: 1,
-            borderBottomColor: active ? 'grey30' : 'grey10',
+            borderBottomColor: 'shadow',
+            boxShadow: active
+              ? '0px 1px 0px 0px rgba(125, 125, 125, .8)'
+              : '0px 1px 0px 0px rgba(125, 125, 125, .4)',
           }}
         >
           <PushButton active={active} />
-          {/* <Box
-            sx={{
-              width: 12,
-              height: 12,
-              borderStyle: 'solid',
-              borderWidth: 1,
-              borderColor: active ? 'primary' : 'grey30',
-              borderRadius: '100%',
-              backgroundColor: active ? 'neon' : 'muted',
-              boxShadow: '0px 0px 8px 1px rgba(40, 173, 250, .2)',
-              mr: 2,
-            }}
-          /> */}
           <Text
             variant="event"
             sx={{
-              color: active ? 'light' : 'bright',
+              color: active ? 'brightNeon' : 'bright',
               fontWeight: 'bold',
+              textShadow: active
+                ? `
+            0px 0px 8px rgba(62, 127, 255, .36),
+            0px 0px 3px rgba(62, 127, 255, .32),
+            0px 0px 1px rgba(62, 127, 255, .3)`
+                : ``,
             }}
           >
             {name}

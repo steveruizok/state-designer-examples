@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Card from './Card'
+import Container from './Container'
 import CodeBlock from './CodeBlock'
 import Visualizer from './Visualizer'
 import { Box, Flex, Text, Button } from '@theme-ui/components'
@@ -36,11 +36,10 @@ const Counter: React.FC<Props> = ({ children }) => {
         The CLICKED_PLUS and CLICKED_MINUS events will increment or decrement
         the count. The events are guarded by conditions.
       </Visualizer>
-      <Card
+      <Container
         my={3}
         p={4}
         sx={{
-          width: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -63,7 +62,7 @@ const Counter: React.FC<Props> = ({ children }) => {
         >
           +
         </Button>
-      </Card>
+      </Container>
       <CodeBlock
         box
         code={`createStateDesigner({
