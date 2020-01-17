@@ -8,15 +8,16 @@ export interface Props {}
 const App: React.FC<Props> = ({ children }) => {
   return (
     <Layout>
-      <Heading variant="lead" mb={4}>
-        State Designer is a JavaScript library for designing how things work.
-      </Heading>
       <Text>
-        You can use State Designer to manage state and events in an application.
-        The library current contains bindings for React, however you can use a
-        State Designer in any type of project.
+        <p>
+          State Designer is a JavaScript library for designing how things work.
+        </p>
+        <p>
+          You can use State Designer to manage state and events in an
+          application. The library current contains bindings for React, however
+          you can use a State Designer in any type of project.
+        </p>
       </Text>
-      <Text>The .</Text>
       <Counter />
     </Layout>
   )

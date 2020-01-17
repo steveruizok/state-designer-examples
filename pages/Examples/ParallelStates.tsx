@@ -11,7 +11,7 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
   const designer = createStateDesigner({
     states: {
       bold: {
-        initial: 'off',
+        initial: 'inactive',
         states: {
           active: {
             on: {
@@ -26,7 +26,7 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
         },
       },
       italic: {
-        initial: 'off',
+        initial: 'inactive',
         states: {
           active: {
             on: {
@@ -88,7 +88,7 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
         code={`createStateDesigner({
   states: {
     bold: {
-      initial: 'off',
+      initial: 'inactive',
       states: {
         active: {
           on: {
@@ -103,7 +103,7 @@ const ParallelStates: React.FC<Props> = ({ children }) => {
       },
     },
     italic: {
-      initial: 'off',
+      initial: 'inactive',
       states: {
         active: {
           on: {
