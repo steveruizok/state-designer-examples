@@ -21,7 +21,7 @@
     "@types/theme-ui__components": "0.2.0",
     "@zeit/next-css": "1.0.1",
     "framer-motion": "1.7.0",
-    "lodash-es": "4.17.15",
+    "lodash-es": "4.17.21",
     "next": "9.1.3",
     "prismjs": "1.19.0",
     "react": "16.11.0",
